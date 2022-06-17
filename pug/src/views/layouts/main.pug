@@ -1,0 +1,27 @@
+extends index.pug
+
+block content 
+
+    section(id="MainSection")
+
+        div(class="row")
+            div(class="col")
+                h1 Ingrese Producto
+                hr
+                form(class="mt-4" action="/productos" method="post")
+                    div(class="mb-3")
+                        label(for="title" class="form-label fw-bold") Nombre
+                        input(type="text" class="form-control" name="title")
+
+                    div(class="mb-3")
+                        label(for="price" class="form-label fw-bold") Precio
+                        input(type="number" class="form-control" name="price")
+
+                    div(class="mb-3")
+                        label(for="thumbnail" class="form-label fw-bold") Foto URL
+                        input(type="text" class="form-control" name="thumbnail")
+
+                    button(type="submit" class="btn btn-success") Enviar 
+                br
+                a(href="/productos" class="btn btn-primary") Ver Listado Productos
+

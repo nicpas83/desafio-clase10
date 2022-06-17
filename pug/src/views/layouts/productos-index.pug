@@ -1,0 +1,32 @@
+extends index.pug
+
+block content 
+
+    section(id="MainSection")
+
+        div(class="row")
+            div(class="col")
+                h1 Vista de Productos 
+                hr
+
+                if productsExists
+                    table(class="table table-dark table-sm")
+                        thead
+                            tr 
+                                th Nombre 
+                                th Precio 
+                                th Foto
+                        tbody 
+                            each val in products
+                                tr 
+                                    td=val.title 
+                                    td=val.price 
+                                    td
+                                        img(src=val.thumbnail width="30px")
+                else 
+                    div(class="alert alert-warning" role="alert") No hay productos en la lista.
+
+                br 
+                a(href="/" class="btn btn-primary") Agregar Nuevo Producto
+
+                

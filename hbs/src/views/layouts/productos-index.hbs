@@ -1,0 +1,36 @@
+<section id="MainSection">
+    <div class="row">
+        <div class="col">
+            <h1>Vista de Productos</h1>
+            <hr>
+
+            {{#if productsExists }}
+            <table class="table table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        <td>{{ this.title }}</td>
+                        <td>{{ this.price }}</td>
+                        <td><img src="{{ this.thumbnail}}" width="30px" /></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+            <div class="alert alert-warning" role="alert">
+            No hay productos en la lista.
+            </div>
+            {{/if}}
+
+            <br>
+            <a href="/" class="btn btn-primary">Agregar Nuevo Producto</a>
+        </div>
+    </div>
+</section>
